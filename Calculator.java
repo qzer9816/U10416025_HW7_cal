@@ -1,4 +1,4 @@
-//U10416025 張詠淳
+//U10416025
 import javafx.application.*;
 import javafx.event.*;
 import javafx.geometry.*;
