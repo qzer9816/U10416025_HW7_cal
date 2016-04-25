@@ -12,7 +12,10 @@ import javafx.stage.Stage;
 
 public class Calculator extends Application {
 	
+	int function;
+	double result;
 	boolean determine = true;
+	boolean start = true;
 	
 	//override
 	@Override
@@ -280,5 +283,152 @@ public class Calculator extends Application {
 	Button buttonAmount = new Button("=");
 	buttonAmount.setMinSize(50, 50);
     	gridpane.add(buttonAmount, 10, 16);
+    	
+    	// + - * /  = actions
+	buttonAdd.setOnAction(e -> {
+		if(start == false){
+			switch(function){
+				case 1:
+					result +=  Double.valueOf(space.getText());
+					break;
+				case 2:
+					result -=  Double.valueOf(space.getText());
+					break;
+				case 3:
+					result *=  Double.valueOf(space.getText());
+					break;
+				case 4:
+					result /=  Double.valueOf(space.getText());
+					break;
+			}
+			space.setText(String.valueOf(result));
+			space.appendText("+");
+			determine = true;
+			function = 1;
+		}
+		else{
+			result = Double.valueOf(space.getText());
+			space.setText(String.valueOf(result));
+			space.appendText("+");
+			determine = true;
+			start = false;
+			function = 1;
+		}
+	});
+	
+	buttonSub.setOnAction(e -> {
+		if(start == false){
+			switch(function){
+				case 1:
+					result +=  Double.valueOf(space.getText());
+					break;
+				case 2:
+					result -=  Double.valueOf(space.getText());
+					break;
+				case 3:
+					result *=  Double.valueOf(space.getText());
+					break;
+				case 4:
+					result /=  Double.valueOf(space.getText());
+					break;
+			}
+			space.setText(String.valueOf(result));
+			space.appendText("-");
+			determine = true;
+			function = 2;
+		}
+		else{
+			result = Double.valueOf(space.getText());
+			space.setText(String.valueOf(result));
+			space.appendText("-");
+			determine = true;
+			start = false;
+			function = 2;
+		}
+	});
+	
+	buttonMultiply.setOnAction(e -> {
+		if(start == false){
+				switch(function){
+				case 1:
+					result +=  Double.valueOf(space.getText());
+					break;
+				case 2:
+					result -=  Double.valueOf(space.getText());
+					break;
+				case 3:
+					result *=  Double.valueOf(space.getText());
+					break;
+				case 4:
+					result /=  Double.valueOf(space.getText());
+					break;
+			}
+			space.setText(String.valueOf(result));
+			space.appendText("*");
+			determine = true;
+			function = 3;
+		}
+		else{
+			result = Double.valueOf(space.getText());
+			space.setText(String.valueOf(result));
+			space.appendText("*");
+			determine = true;
+			start = false;
+			function = 3;
+		}
+	});
+		
+	buttonDivide.setOnAction(e -> {
+		if(start == false){
+				switch(function){
+				case 1:
+					result +=  Double.valueOf(space.getText());
+					break;
+				case 2:
+					result -=  Double.valueOf(space.getText());
+					break;
+				case 3:
+					result *=  Double.valueOf(space.getText());
+					break;
+				case 4:
+					result /=  Double.valueOf(space.getText());
+					break;
+			}
+			space.setText(String.valueOf(result));
+			space.appendText("/");
+			determine = true;
+			function = 4;
+		}
+		else{
+			result = Double.valueOf(space.getText());
+			space.setText(String.valueOf(result));
+			space.appendText("/");
+			determine = true;
+			start = false;
+			function = 4;
+		}
+	});
+		
+	buttonAmount.setOnAction(e -> {
+		if(start == false){
+			switch(function){
+				case 1:
+					result +=  Double.valueOf(space.getText());
+					break;
+				case 2:
+					result -=  Double.valueOf(space.getText());
+					break;
+				case 3:
+					result *=  Double.valueOf(space.getText());
+					break;
+				case 4:
+					result /=  Double.valueOf(space.getText());
+					break;
+			}
+			space.setText(String.valueOf(result));
+			determine = true;
+			start = true;
+		}
+	});
 	}
 }
